@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="testTask">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+	<body>
+		<section class="top">
+			<div class="header">
+				<div class="logo">
+					<a href="#">
+						<img src="img/logo.png" alt="logo" />
+					</a>
+				</div>
+				<nav class="menu">
+					<ul class="menu-list">
+						<li class="menu-list__item"><a href="#">Home</a></li>
+						<li class="menu-list__item"><a href="#shop">Products</a></li>
+						<li class="menu-list__item">
+							<a href="#cart"><i class="fa fa-shopping-cart"></i
+							></a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="top-info">
+				<h1 class="h1 top-info__title">
+					Our clothing , your comfort
+				</h1>
+				<h3 class="h3 top-info__subtitle">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+					eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</h3>
+			</div>
+			<div class="top-arrow">
+				<a class="top-arrow__link" href="#shop">
+					<i class="fa fa-chevron-down"></i>
+				</a>
+			</div>
+		</section>
+		<section class="shop" id="shop">
+			<div ng-controller="productsCtrl">
+				<div class="products-filter">
+					<ul class="products-categories">
+						<li>
+							<input class="products-categories__checkbox" type="checkbox" name="men" ng-model="showCategory.men" />
+							<label class="products-categories__label" for="men">men</label>
+						</li>
+						<li>
+							<input class="products-categories__checkbox" type="checkbox" ng-model="showCategory.women" />
+							<label class="products-categories__label"  for="women">women</label>
+						</li>
+						<li>
+							<input class="products-categories__checkbox" type="checkbox" ng-model="showCategory.child" />
+							<label class="products-categories__label" for="children">children</label>
+						</li>
+					</ul>
+					<div class="filter-all button" ng-click="clickAllProducts()">
+						see all products
+					</div>
+				</div>
+				<div class="products">
+					<div
+						class="products__item"
+						ng-repeat="item in data.items | filter : customFilter"
+					>
+						<div class="products-item__head">
+							<select class="products-item__options">
+								<option ng-repeat="option in item.options">{{option}}</option>
+							</select>
+						</div>
+						<div class="products-item__img">
+							<img ng-src="img/{{item.img}}.png" alt="" />
+						</div>
+						<div class="products-item__bottom">
+							<span class="products-item__name">{{item.name}}</span>
+							<span class="products-item__price">{{item.price}}<i class="fa fa-eur"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="quote">
+				<i class="quote__img fa fa-twitter" aria-hidden="true"></i>
+				<span class="quote__text">“ E-commerce psd theme available ”</span>
+			</div>
+			<div class="footer">
+				<div class="footer-info">
+					<h3 class="footer-info__title">Trekking</h3>
+					<span class="footer-info__text">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+						aliquip ex ea commodo consequat.
+					</span>
+				</div>
+				<div class="footer-links" ng-controller="menuCtrl">
+					<ul class="footer-links__list">
+						<li class="footer-links__item" ng-repeat="linkItem in data.footerMenu">
+							<a class="footer-links__link" href="{{linkItem.link}}">{{linkItem.name}}</a>
+						</li>
+					</ul>
+					<span class="footer-links__copyright">Design by gianluca cosetta</span>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

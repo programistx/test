@@ -1,0 +1,147 @@
+/* --- SHOP SECTION --- */
+#shop {
+	padding-top: 22px;
+	padding-bottom: 241px;
+}
+
+.products-filter {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 25px 10px 125px 10px;
+	margin: 0 auto;
+}
+
+.products-categories {
+	li {
+		display: inline-block;
+	}
+	i {
+		position: relative;
+		font-size: 21px;
+		color: $primary-color;
+		z-index: 1;
+		visibility: hidden;
+	}
+}
+
+.products-categories__checkbox {
+	position: absolute;
+	z-index: 2;
+	opacity: 0;
+	width: 25px;
+	height: 24px;
+	margin: -2px 0 0 -27px;
+	cursor: pointer;
+}
+
+.products-categories__label {
+	position: relative;
+	padding: 0px 61px 0 13px;
+	font-size: 18px;
+	color: #333333;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.products-categories__label:before {
+	content: "";
+	position: absolute;
+	top: -5px;
+	left: -29px;
+	width: 21px;
+	height: 21px;
+	border-radius: 3px;
+	border: 2px solid #cccccc;
+	background: #fff;
+}
+
+.products-categories__checkbox:checked + .products-categories__label:before {
+	border: 2px solid $primary-color;
+	background: url("../img/marker.png") center center no-repeat #fff;
+}
+
+.filter-all {
+	font-size: 14px;
+	width: 204px;
+	border-radius: 3px;
+	background-color: $primary-color;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 18px 0 18px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.products {
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-evenly;
+}
+
+.products__item {
+	width: 319px;
+	padding: 18px 27px 17px 18px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	border: 5px solid #fff;
+	border-radius: 3px;
+	text-transform: uppercase;
+	&:hover {
+		border-color: $primary-color;
+	}
+}
+
+.products__item {
+	i {
+		font-size: 19px;
+		color: inherit;
+		padding-left: 1px;
+		vertical-align: revert;
+	}
+}
+
+.products-item__head {
+	cursor: pointer;
+}
+
+.products-item__options {
+	position: absolute;
+	list-style: none;
+	padding-right: 17px;
+	height: 20px;
+	font-size: 16px;
+	font-weight: 500;
+	text-transform: uppercase;
+	overflow: hidden;
+	transition: height 0.2s ease-in-out;
+	background: url(../img/fa-angle-down.png) right 6px no-repeat;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.products-item__img {
+	text-align: center;
+	margin-top: 44px;
+	margin-bottom: 26px;
+}
+
+.products-item__name {
+	color: $primary-color;
+}
+
+.products-item__price {
+	font-size: 21px;
+	font-weight: 300;
+	float: right;
+}
+
+/* --- END SHOP SECTION --- */

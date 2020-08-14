@@ -1,0 +1,37 @@
+@import '_reset.scss';
+
+$font-stack:    "Roboto", sans-serif;
+$primary-color: #aa9b77;
+$top-text-color: #fff;
+$footer-background-color: #424242;
+$footer-text-color: #fff;
+
+html {
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+.button {
+	transition: opacity 0.3s ease-in-out;
+}
+
+.button:hover,
+a:hover {
+	cursor: pointer;
+	opacity: 0.85;
+}
+
+body {
+	font-family: $font-stack;
+	font-weight: 400;
+	min-width: 320px;
+}
+
+@import '_top';
+
+@import '_shop';
+
+@import '_footer';
+
+@import '_media';
